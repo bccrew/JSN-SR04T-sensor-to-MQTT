@@ -41,19 +41,28 @@ def main():
         # Calculate the time it took the wave to travel there and back
         measuredTime = stop - start
         # Calculate the travel distance by multiplying the measured time by speed of sound
+	# Speed of sound is depending on the environment temperature
         distanceBothWays = measuredTime * 35100  # cm/s in 20 degrees Celsius
         # Divide the distance by 2 to get the actual distance from sensor to obstacle
         distance = distanceBothWays / 2
         # Print the distance
         print("Distance : {0:5.1f}cm".format(distance))
-		
+	
+# Print the median of 10 measurements	
 print(Total)
 average = Total / 10
 print(average)
+# Subtract the distance from the sensor to the water surface from the measured height between the bottom of your collector 
+# and the position of the sensor. In my case the sensor is mounted 200cm above bottom of the collector.
 afstand = 200 - average
 print(afstand)
 
+# If you have a cylindrical shaped rain water collector, you will need to measure the radius.
 # 8281 = kwadraat van 91 (straal van de regenput cilinder)
+# To calculate the volume of a cylinder, the following formula is used.
+# V = π x r² x h (where r = radius and h = height)
+
+radius = 91
 liters = afstand * 8281 * math.pi
 print(liters)
 
