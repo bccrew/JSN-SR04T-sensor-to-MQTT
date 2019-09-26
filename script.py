@@ -22,7 +22,9 @@ def main():
         GPIO.setup(GPIO_ECHO, GPIO.IN)
 
         # Set TRIGGER to LOW
-        GPIO.output(GPIO_TRIGGER, False)                                                                                                                                                                                                                                                                                                                                                                                                                                                          # Let the sensor settle for a while                                                                                                                                                                                                          time.sleep(0.5)
+        GPIO.output(GPIO_TRIGGER, False)             
+	# Let the sensor settle for a while
+	time.sleep(0.5)
 
         # Send 10 microsecond pulse to TRIGGER
         GPIO.output(GPIO_TRIGGER, True)  # set TRIGGER to HIGH
