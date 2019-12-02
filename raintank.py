@@ -68,13 +68,15 @@ def getData():
     # Reset GPIO settings
     GPIO.cleanup()
 	
-	# To calculate the total amount of liters, we'll use the standard formula to calculate cylindrical volume: V = π . r² . h (Where r : radius and h = height)
-	# First we'll subtract the distance from the sensor to the water surface from the distance between the sensor and the bottom of the raintank. This will give us te height of the water level.
+    # To calculate the total amount of liters, we'll use the standard formula to calculate cylindrical volume: 
+    # V = π . r² . h (Where r : radius and h = height)
+    # First we'll subtract the distance from the sensor to the water surface from the distance between the sensor 
+    # and the bottom of the raintank. This will give us te height of the water level.
 
     WaterHeight = TankHeight - temp / measurements
     print("Water level: {0:5.1f}cm".format(WaterHeight))
 	
-	# Calculate the volume.
+    # Calculate the volume.
     liters = WaterHeight * TankRadius * TankRadius * math.pi / 1000
     print("In liters: {0:5.1f}".format(liters))
     percentage = liters / 50
