@@ -1,4 +1,4 @@
-## Use JSN-SR04T sensor on Raspberry Pi to calculate the cylindrical volume or a raintank and publish to MQTT broker
+## Use JSN-SR04T sensor on Raspberry Pi to calculate the cylindrical volume of a raintank and publish to MQTT broker
 ```
 
 Installation instruction:
